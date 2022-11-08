@@ -2,6 +2,7 @@ import { createWebHistory, createRouter } from 'vue-router'
 import store from '@/store'
 
 /* Guest Component */
+const Home = () => import('@/components/ExampleComponent.vue')
 const Login = () => import('@/components/Login.vue')
 const Register = () => import('@/components/Register.vue')
 /* Guest Component */
@@ -17,12 +18,19 @@ const Dashboard = () => import('@/components/Dashboard.vue')
 
 const routes = [
     {
+        path: "/",
+        name: "Home",
+        component: Home,
+        meta: {
+          requiresAuth: false,
+        },
+      },
+    {
         name: "login",
         path: "/login",
         component: Login,
         meta: {
-            middleware: "guest",
-            title: `Login`
+            requiresAuth: false,
         }
     },
     {
@@ -30,20 +38,19 @@ const routes = [
         path: "/register",
         component: Register,
         meta: {
-            middleware: "guest",
-            title: `Register`
+            requiresAuth: false,
         }
     },
     {
-        path: "/",
+        path: "/admin",
         component: DahboardLayout,
         meta: {
-            middleware: "auth"
+            requiresAuth: true,
         },
         children: [
             {
                 name: "dashboard",
-                path: '/',
+                path: '/admin',
                 component: Dashboard,
                 meta: {
                     title: `Dashboard`
@@ -59,19 +66,31 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-    document.title = to.meta.title
-    if (to.meta.middleware == "guest") {
-        if (store.state.auth.authenticated) {
-            next({ name: "dashboard" })
-        }
-        next()
+    if (to.matched.some((record) => record.meta.requiresAuth)) {
+      if (store.state.auth.authenticated) {
+        next();
+      } else {
+        next("/login");
+      }
     } else {
-        if (store.state.auth.authenticated) {
-            next()
-        } else {
-            next({ name: "login" })
-        }
+      next();
     }
-})
+});
+
+// router.beforeEach((to, from, next) => {
+//     document.title = to.meta.title
+//     if (to.meta.middleware == "guest") {
+//         if (store.state.auth.authenticated) {
+//             next({ name: "dashboard" })
+//         }
+//         next()
+//     } else {
+//         if (store.state.auth.authenticated) {
+//             next()
+//         } else {
+//             next({ name: "login" })
+//         }
+//     }
+// })
 
 export default router
