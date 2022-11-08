@@ -24,7 +24,7 @@ const routes = [
         meta: {
           requiresAuth: false,
         },
-      },
+    },
     {
         name: "login",
         path: "/login",
@@ -70,6 +70,7 @@ router.beforeEach((to, from, next) => {
       if (store.state.auth.authenticated) {
         next();
       } else {
+        alert('Auth required!')
         next("/login");
       }
     } else {
