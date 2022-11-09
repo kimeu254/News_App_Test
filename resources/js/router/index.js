@@ -3,8 +3,8 @@ import store from '@/store'
 
 /* Guest Component */
 const Home = () => import('@/components/ExampleComponent.vue')
-const Login = () => import('@/components/Login.vue')
-const Register = () => import('@/components/Register.vue')
+const Login = () => import('@/components/admin/Login.vue')
+const Register = () => import('@/components/admin/Register.vue')
 /* Guest Component */
 
 /* Layouts */
