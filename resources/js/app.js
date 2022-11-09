@@ -1,4 +1,5 @@
 import './bootstrap';
+import '../css/app.css'
 import '../sass/app.scss'
 import Router from '@/router'
 import store from '@/store'
