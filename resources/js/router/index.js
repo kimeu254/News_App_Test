@@ -8,11 +8,11 @@ const Register = () => import('@/components/Register.vue')
 /* Guest Component */
 
 /* Layouts */
-const DahboardLayout = () => import('@/components/layouts/Default.vue')
+const DahboardLayout = () => import('@/components/admin/layouts/Default.vue')
 /* Layouts */
 
 /* Authenticated Component */
-const Dashboard = () => import('@/components/Dashboard.vue')
+const Dashboard = () => import('@/components/admin/Dashboard.vue')
 /* Authenticated Component */
 
 
