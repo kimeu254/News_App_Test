@@ -1,30 +1,4 @@
 
-
-  /* Fonts */
-  @font-face {
-    font-family: 'ubuntu-light';
-    src: url("../fonts/Ubuntu/Ubuntu-Light.eot");
-    /* IE9 Compat Modes */
-    src: url("../fonts/Ubuntu/Ubuntu-Light.woff2") format("woff2"), url("../fonts/Ubuntu/Ubuntu-Light.woff") format("woff"), url("../fonts/Ubuntu/Ubuntu-Light.ttf") format("truetype"); }
-  
-  @font-face {
-    font-family: 'ubuntu-regular';
-    src: url("../fonts/Ubuntu/Ubuntu-Regular.eot");
-    /* IE9 Compat Modes */
-    src: url("../fonts/Ubuntu/Ubuntu-Regular.woff2") format("woff2"), url("../fonts/Ubuntu/Ubuntu-Regular.woff") format("woff"), url("../fonts/Ubuntu/Ubuntu-Regular.ttf") format("truetype"); }
-  
-  @font-face {
-    font-family: 'ubuntu-medium';
-    src: url("../fonts/Ubuntu/Ubuntu-Medium.eot");
-    /* IE9 Compat Modes */
-    src: url("../fonts/Ubuntu/Ubuntu-Medium.woff2") format("woff2"), url("../fonts/Ubuntu/Ubuntu-Medium.woff") format("woff"), url("../fonts/Ubuntu/Ubuntu-Medium.ttf") format("truetype"); }
-  
-  @font-face {
-    font-family: 'ubuntu-bold';
-    src: url("../fonts/Ubuntu/Ubuntu-Bold.eot");
-    /* IE9 Compat Modes */
-    src: url("../fonts/Ubuntu/Ubuntu-Bold.woff2") format("woff2"), url("../fonts/Ubuntu/Ubuntu-Bold.woff") format("woff"), url("../fonts/Ubuntu/Ubuntu-Bold.ttf") format("truetype"); }
-  
   /* Miscellanoeous */
   body,
   html {
@@ -584,7 +558,7 @@
               .sidebar .nav .nav-item .nav-link i.menu-icon:before {
                 vertical-align: middle; }
             .sidebar .nav .nav-item .nav-link i.menu-arrow {
-              font: normal normal normal 24px/1 "Material Design Icons";
+              font-family: "FontAwesome";
               line-height: 1;
               font-size: 1.125rem;
               margin-left: auto;
@@ -593,7 +567,7 @@
                 margin-left: 0;
                 margin-right: auto; }
               .sidebar .nav .nav-item .nav-link i.menu-arrow:before {
-                content: "\f141";
+                content: "\f053";
                 font-size: inherit;
                 color: inherit; }
               .sidebar .nav .nav-item .nav-link i.menu-arrow + .menu-icon {
@@ -611,7 +585,7 @@
             margin-right: auto;
             margin-left: 1rem; }
           .sidebar .nav .nav-item .nav-link[aria-expanded="true"] .menu-arrow:before {
-            content: "\f140"; }
+            content: "\f078"; }
         .sidebar .nav .nav-item.active {
           background: #ffffff; }
           .sidebar .nav .nav-item.active > .nav-link .menu-title {
@@ -671,8 +645,8 @@
             height: auto;
             border-top: 0; }
             .sidebar .nav.sub-menu .nav-item .nav-link:before {
-              content: "\F054";
-              font-family: "Material Design Icons";
+              content: "\f061";
+              font-family: "FontAwesome";
               display: block;
               position: absolute;
               left: 0px;

@@ -54,6 +54,38 @@
                             <i class="mdi mdi-home menu-icon"></i>
                         </a>
                     </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                            <span class="menu-title">News</span>
+                            <i class="menu-arrow "></i>
+                            <i class="mdi mdi-newspaper-variant-multiple-outline menu-icon"></i>
+                        </a>
+                        <div class="collapse" id="ui-basic">
+                            <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"> <a class="nav-link">South Eastern</a></li>
+                            <li class="nav-item"> <a class="nav-link">National</a></li>
+                            <li class="nav-item"> <a class="nav-link">International</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#ui-basics" aria-expanded="false" aria-controls="ui-basic">
+                            <span class="menu-title">Categories</span>
+                            <i class="menu-arrow "></i>
+                            <i class="mdi mdi-shape-outline menu-icon"></i>
+                        </a>
+                        <div class="collapse" id="ui-basics">
+                            <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"> <a class="nav-link">Politics</a></li>
+                            <li class="nav-item"> <a class="nav-link">Business</a></li>
+                            <li class="nav-item"> <a class="nav-link">Sports</a></li>
+                            <li class="nav-item"> <a class="nav-link">Lifestyle</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    
                 </ul>
             </nav>
             <div class="main-panel">
@@ -72,6 +104,7 @@
 
 <script>
 import {mapActions} from 'vuex'
+
 export default {
     name:"default-layout",
     data(){
