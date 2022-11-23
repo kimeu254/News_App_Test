@@ -2,8 +2,8 @@
     <div class="container-scroller">
         <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row shadow">
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                <a class="navbar-brand brand-logo" href="index.html"><img src="" alt="logo" /></a>
-                <a class="navbar-brand brand-logo-mini" href="index.html"><img src="" alt="logo" /></a>
+                <a class="navbar-brand brand-logo" ><img src="../../../../../public/img/Dark Blue Red White Generic News General News Logo (4)cropped1.png" alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" ><img src="../../../../../public/img/journalism.png" alt="logo" /></a>
             </div>
             <div class="navbar-menu-wrapper d-flex align-items-stretch">
                 <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize" @click="minimize">
@@ -18,7 +18,7 @@
                                 <span class="availability-status online"></span>
                             </div>
                             <div class="nav-profile-text">
-                                <p class="mb-1 text-black text-capitalize">{{ user.name }}</p>
+                                <p class="mb-1 text-light text-capitalize">{{ user.name }}</p>
                             </div>
                         </a>
                         <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
@@ -48,8 +48,8 @@
                         <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
                     </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">
+                    <li class="nav-item active">
+                        <a class="nav-link" >
                             <span class="menu-title">Dashboard</span>
                             <i class="mdi mdi-home menu-icon"></i>
                         </a>
@@ -238,7 +238,7 @@ export default {
   
   /* Footer */
   .footer {
-    background: #F5F7FF;
+    background: #ffffff;
     color: color(dark);
     border-top: 1px solid #e7dee9;
     padding: 30px 1rem;
@@ -257,7 +257,7 @@ export default {
   /* Navbar */
   .navbar {
     font-family: "ubuntu-light", sans-serif;
-    background: #fff;
+    background: #ff2942;
     transition: background 0.25s ease;
     -webkit-transition: background 0.25s ease;
     -moz-transition: background 0.25s ease;
@@ -269,14 +269,14 @@ export default {
       -webkit-transition: width 0.25s ease, background 0.25s ease;
       -moz-transition: width 0.25s ease, background 0.25s ease;
       -ms-transition: width 0.25s ease, background 0.25s ease;
-      background: #fff;
+      background: #ff2942;
       width: 260px;
       height: 70px; }
       @media (max-width: 991px) {
         .navbar .navbar-brand-wrapper {
           width: 55px; } }
       .navbar .navbar-brand-wrapper .navbar-brand {
-        color: crimson;
+        color: #ff2942;
         font-size: 1.5rem;
         line-height: 48px;
         margin-right: 0;
@@ -302,7 +302,7 @@ export default {
       -webkit-transition: width 0.25s ease;
       -moz-transition: width 0.25s ease;
       -ms-transition: width 0.25s ease;
-      color: crimson;
+      color: #ffffff;
       padding-left: 24px;
       padding-right: 24px;
       width: calc(100% - 260px);
@@ -359,7 +359,7 @@ export default {
           .navbar .navbar-menu-wrapper .navbar-nav .nav-item .nav-link i {
             font-size: 1.25rem; }
         .navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .dropdown-toggle:after {
-          color: #b66dff;
+          color: #ffffff;
           font-size: 1rem; }
         .navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .dropdown-menu {
           border: none;
@@ -467,130 +467,10 @@ export default {
       .navbar .navbar-brand-wrapper .brand-logo-mini {
         padding-top: 0px; } }
   
-  /* Navbar color variations */
-  .navbar.navbar-primary .navbar-menu-wrapper {
-    background: -webkit-gradient(linear, left top, right top, from(#da8cff), to(#9a55ff));
-    background: linear-gradient(to right, #da8cff, #9a55ff);
-    color: #ffffff; }
-    .navbar.navbar-primary .navbar-menu-wrapper .search-field .input-group input:-ms-input-placeholder {
-      color: #ffffff; }
-    .navbar.navbar-primary .navbar-menu-wrapper .search-field .input-group input:-moz-placeholder {
-      color: #ffffff; }
-    .navbar.navbar-primary .navbar-menu-wrapper .search-field .input-group input::-moz-placeholder {
-      color: #ffffff; }
-    .navbar.navbar-primary .navbar-menu-wrapper .search-field .input-group input::-webkit-input-placeholder {
-      color: #ffffff; }
-    .navbar.navbar-primary .navbar-menu-wrapper .search-field .input-group i {
-      color: #ffffff; }
-  
-  .navbar.navbar-secondary .navbar-menu-wrapper {
-    background: -webkit-gradient(linear, left top, right top, from(#e7ebf0), to(#868e96));
-    background: linear-gradient(to right, #e7ebf0, #868e96);
-    color: #ffffff; }
-    .navbar.navbar-secondary .navbar-menu-wrapper .search-field .input-group input:-ms-input-placeholder {
-      color: #ffffff; }
-    .navbar.navbar-secondary .navbar-menu-wrapper .search-field .input-group input:-moz-placeholder {
-      color: #ffffff; }
-    .navbar.navbar-secondary .navbar-menu-wrapper .search-field .input-group input::-moz-placeholder {
-      color: #ffffff; }
-    .navbar.navbar-secondary .navbar-menu-wrapper .search-field .input-group input::-webkit-input-placeholder {
-      color: #ffffff; }
-    .navbar.navbar-secondary .navbar-menu-wrapper .search-field .input-group i {
-      color: #ffffff; }
-  
-  .navbar.navbar-success .navbar-menu-wrapper {
-    background: -webkit-gradient(linear, left top, right top, from(#84d9d2), to(#07cdae));
-    background: linear-gradient(to right, #84d9d2, #07cdae);
-    color: #ffffff; }
-    .navbar.navbar-success .navbar-menu-wrapper .search-field .input-group input:-ms-input-placeholder {
-      color: #ffffff; }
-    .navbar.navbar-success .navbar-menu-wrapper .search-field .input-group input:-moz-placeholder {
-      color: #ffffff; }
-    .navbar.navbar-success .navbar-menu-wrapper .search-field .input-group input::-moz-placeholder {
-      color: #ffffff; }
-    .navbar.navbar-success .navbar-menu-wrapper .search-field .input-group input::-webkit-input-placeholder {
-      color: #ffffff; }
-    .navbar.navbar-success .navbar-menu-wrapper .search-field .input-group i {
-      color: #ffffff; }
-  
-  .navbar.navbar-info .navbar-menu-wrapper {
-    background: -webkit-gradient(linear, left top, right top, from(#90caf9), color-stop(99%, #047edf));
-    background: linear-gradient(to right, #90caf9, #047edf 99%);
-    color: #ffffff; }
-    .navbar.navbar-info .navbar-menu-wrapper .search-field .input-group input:-ms-input-placeholder {
-      color: #ffffff; }
-    .navbar.navbar-info .navbar-menu-wrapper .search-field .input-group input:-moz-placeholder {
-      color: #ffffff; }
-    .navbar.navbar-info .navbar-menu-wrapper .search-field .input-group input::-moz-placeholder {
-      color: #ffffff; }
-    .navbar.navbar-info .navbar-menu-wrapper .search-field .input-group input::-webkit-input-placeholder {
-      color: #ffffff; }
-    .navbar.navbar-info .navbar-menu-wrapper .search-field .input-group i {
-      color: #ffffff; }
-  
-  .navbar.navbar-warning .navbar-menu-wrapper {
-    background: -webkit-gradient(linear, left top, right top, from(#f6e384), to(#ffd500));
-    background: linear-gradient(to right, #f6e384, #ffd500);
-    color: #ffffff; }
-    .navbar.navbar-warning .navbar-menu-wrapper .search-field .input-group input:-ms-input-placeholder {
-      color: #ffffff; }
-    .navbar.navbar-warning .navbar-menu-wrapper .search-field .input-group input:-moz-placeholder {
-      color: #ffffff; }
-    .navbar.navbar-warning .navbar-menu-wrapper .search-field .input-group input::-moz-placeholder {
-      color: #ffffff; }
-    .navbar.navbar-warning .navbar-menu-wrapper .search-field .input-group input::-webkit-input-placeholder {
-      color: #ffffff; }
-    .navbar.navbar-warning .navbar-menu-wrapper .search-field .input-group i {
-      color: #ffffff; }
-  
-  .navbar.navbar-danger .navbar-menu-wrapper {
-    background: -webkit-gradient(linear, left top, right top, from(#ffbf96), to(#fe7096));
-    background: linear-gradient(to right, #ffbf96, #fe7096);
-    color: #ffffff; }
-    .navbar.navbar-danger .navbar-menu-wrapper .search-field .input-group input:-ms-input-placeholder {
-      color: #ffffff; }
-    .navbar.navbar-danger .navbar-menu-wrapper .search-field .input-group input:-moz-placeholder {
-      color: #ffffff; }
-    .navbar.navbar-danger .navbar-menu-wrapper .search-field .input-group input::-moz-placeholder {
-      color: #ffffff; }
-    .navbar.navbar-danger .navbar-menu-wrapper .search-field .input-group input::-webkit-input-placeholder {
-      color: #ffffff; }
-    .navbar.navbar-danger .navbar-menu-wrapper .search-field .input-group i {
-      color: #ffffff; }
-  
-  .navbar.navbar-light .navbar-menu-wrapper {
-    background: -webkit-gradient(linear, left top, left bottom, from(#f4f4f4), to(#e4e4e9));
-    background: linear-gradient(to bottom, #f4f4f4, #e4e4e9);
-    color: #ffffff; }
-    .navbar.navbar-light .navbar-menu-wrapper .search-field .input-group input:-ms-input-placeholder {
-      color: #ffffff; }
-    .navbar.navbar-light .navbar-menu-wrapper .search-field .input-group input:-moz-placeholder {
-      color: #ffffff; }
-    .navbar.navbar-light .navbar-menu-wrapper .search-field .input-group input::-moz-placeholder {
-      color: #ffffff; }
-    .navbar.navbar-light .navbar-menu-wrapper .search-field .input-group input::-webkit-input-placeholder {
-      color: #ffffff; }
-    .navbar.navbar-light .navbar-menu-wrapper .search-field .input-group i {
-      color: #ffffff; }
-  
-  .navbar.navbar-dark .navbar-menu-wrapper {
-    background: linear-gradient(89deg, #5e7188, #3e4b5b);
-    color: #ffffff; }
-    .navbar.navbar-dark .navbar-menu-wrapper .search-field .input-group input:-ms-input-placeholder {
-      color: #ffffff; }
-    .navbar.navbar-dark .navbar-menu-wrapper .search-field .input-group input:-moz-placeholder {
-      color: #ffffff; }
-    .navbar.navbar-dark .navbar-menu-wrapper .search-field .input-group input::-moz-placeholder {
-      color: #ffffff; }
-    .navbar.navbar-dark .navbar-menu-wrapper .search-field .input-group input::-webkit-input-placeholder {
-      color: #ffffff; }
-    .navbar.navbar-dark .navbar-menu-wrapper .search-field .input-group i {
-      color: #ffffff; }
-  
   /* Sidebar */
   .sidebar {
     min-height: calc(100vh - 70px);
-    background: #ffffff;
+    background: #ff2942;
     font-family: "ubuntu-regular", sans-serif;
     padding: 0;
     width: 260px;
@@ -625,7 +505,7 @@ export default {
           align-items: center;
           white-space: nowrap;
           padding: 1.125rem 0 1.125rem 0;
-          color: #3e4b5b;
+          color: #ffffff;
           -webkit-transition-duration: 0.45s;
           transition-duration: 0.45s;
           transition-property: color;
@@ -636,7 +516,7 @@ export default {
               font-size: 1.125rem;
               line-height: 1;
               margin-left: auto;
-              color: #bba8bff5; }
+              color: #ffffff; }
               .rtl .sidebar .nav .nav-item .nav-link i.menu-icon {
                 margin-left: 0;
                 margin-right: auto; }
@@ -647,7 +527,7 @@ export default {
               line-height: 1;
               font-size: 1.125rem;
               margin-left: auto;
-              color: #9e9da0; }
+              color: #ffffff; }
               .rtl .sidebar .nav .nav-item .nav-link i.menu-arrow {
                 margin-left: 0;
                 margin-right: auto; }
@@ -672,14 +552,15 @@ export default {
           .sidebar .nav .nav-item .nav-link[aria-expanded="true"] .menu-arrow:before {
             content: "\f078"; }
         .sidebar .nav .nav-item.active {
-          background: #ffffff; }
+          background: brown;
+        border-left: 5px solid black; }
           .sidebar .nav .nav-item.active > .nav-link .menu-title {
-            color: #b66dff;
+            color: #ffffff;
             font-family: "ubuntu-medium", sans-serif; }
           .sidebar .nav .nav-item.active > .nav-link i {
-            color: #b66dff; }
+            color: #ffffff; }
         .sidebar .nav .nav-item:hover {
-          background: #fcfcfc; }
+          background: brown; }
         .sidebar .nav .nav-item.nav-profile .nav-link {
           height: auto;
           line-height: 1;
@@ -714,7 +595,7 @@ export default {
             .sidebar .nav .nav-item.sidebar-actions:hover .nav-link {
               color: initial; }
       .sidebar .nav:not(.sub-menu) > .nav-item:hover:not(.nav-category):not(.nav-profile) > .nav-link {
-        color: #29323d; }
+        color: #ffffff; }
       .sidebar .nav.sub-menu {
         margin-bottom: 20px;
         margin-top: 0;
@@ -722,7 +603,7 @@ export default {
         .sidebar .nav.sub-menu .nav-item {
           padding: 0; }
           .sidebar .nav.sub-menu .nav-item .nav-link {
-            color: #888;
+            color: #ffffff;
             padding: 0.75rem 2rem 0.75rem 2rem;
             position: relative;
             font-size: 0.8125rem;
@@ -738,18 +619,19 @@ export default {
               top: 50%;
               -webkit-transform: translateY(-50%);
               transform: translateY(-50%);
-              color: #a2a2a2;
+              color: #ffffff;
               font-size: .75rem; }
               .rtl .sidebar .nav.sub-menu .nav-item .nav-link:before {
                 left: auto;
                 right: 0; }
             .sidebar .nav.sub-menu .nav-item .nav-link.active {
-              color: #b66dff;
+              color: #ff2942;
               background: transparent; }
             .sidebar .nav.sub-menu .nav-item .nav-link:hover {
-              color: #555555; }
+              color: #ff2942; }
           .sidebar .nav.sub-menu .nav-item:hover {
-            background: transparent; }
+            background: transparent;
+          cursor: pointer; }
   
   /* style for off-canvas menu*/
   @media screen and (max-width: 991px) {
@@ -821,7 +703,7 @@ export default {
             -webkit-box-align: center;
             -ms-flex-align: center;
             align-items: center;
-            background: #fcfcfc;
+            background: brown;
             padding: 0.5rem 1.4rem;
             left: 70px;
             position: absolute;
@@ -841,7 +723,7 @@ export default {
           .sidebar-icon-only .sidebar .nav .nav-item.hover-open .collapsing {
             display: block;
             padding: .5rem 0;
-            background: #fcfcfc;
+            background: brown;
             border-radius: 0 0 5px 0;
             position: absolute;
             left: 70px;
@@ -900,14 +782,11 @@ export default {
         width: 100%; } }
   
   .content-wrapper {
-    background: #F5F7FF;
+    background: #ffffff;
     padding: 2.75rem 2.25rem;
     width: 100%;
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1; }
-  
-  /*# sourceMappingURL=style.css.map */
-  
   
 </style>
