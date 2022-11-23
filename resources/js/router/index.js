@@ -2,13 +2,14 @@ import { createWebHistory, createRouter } from 'vue-router'
 import store from '@/store'
 
 /* Guest Component */
-const Home = () => import('@/components/ExampleComponent.vue')
+const Home = () => import('@/components/public/Home.vue')
 const Login = () => import('@/components/admin/Login.vue')
 const Register = () => import('@/components/admin/Register.vue')
 /* Guest Component */
 
 /* Layouts */
 const DahboardLayout = () => import('@/components/admin/layouts/Default.vue')
+const HomeLayout = () => import('@/components/public/layouts/Default.vue')
 /* Layouts */
 
 /* Authenticated Component */
@@ -19,11 +20,20 @@ const Dashboard = () => import('@/components/admin/Dashboard.vue')
 const routes = [
     {
         path: "/",
-        name: "Home",
-        component: Home,
+        component: HomeLayout,
         meta: {
           requiresAuth: false,
         },
+        children: [
+            {
+                name: "home",
+                path: '/',
+                component: Home,
+                meta: {
+                    title: `Home`
+                }
+            }
+        ]
     },
     {
         name: "login",
