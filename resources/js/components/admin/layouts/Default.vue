@@ -22,8 +22,13 @@
                             </div>
                         </a>
                         <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
-                            <a class="dropdown-item" href="javascript:void(0)" @click="logout">
-                            <i class="mdi mdi-logout me-2 text-primary"></i> Signout </a>
+                          <a class="dropdown-item" href="javascript:void(0)">
+                            <i class="mdi mdi-account-edit me-2 text-warning"></i> Edit Profile 
+                          </a>
+                          <hr class="dropdown-divider">
+                          <a class="dropdown-item" href="javascript:void(0)" @click="logout">
+                            <i class="mdi mdi-logout me-2 text-danger"></i> Signout 
+                          </a>
                         </div>
                     </li>
                 </ul>
@@ -48,11 +53,11 @@
                         <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
                     </a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" >
+                    <li class="nav-item">
+                        <router-link :to="{name:'dashboard'}" class="nav-link" >
                             <span class="menu-title">Dashboard</span>
                             <i class="mdi mdi-home menu-icon"></i>
-                        </a>
+                        </router-link>
                     </li>
                     
                     <li class="nav-item">
@@ -63,9 +68,9 @@
                         </a>
                         <div class="collapse" id="ui-basic">
                             <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"> <a class="nav-link">South Eastern</a></li>
-                            <li class="nav-item"> <a class="nav-link">National</a></li>
-                            <li class="nav-item"> <a class="nav-link">International</a></li>
+                            <li class="nav-item"> <router-link :to="{name: 'southEasternNews'}" class="nav-link">South Eastern</router-link></li>
+                            <li class="nav-item"> <router-link :to="{name: 'nationalNews'}" class="nav-link">National</router-link></li>
+                            <li class="nav-item"> <router-link :to="{name: 'internationalNews'}" class="nav-link">International</router-link></li>
                             </ul>
                         </div>
                     </li>
@@ -78,12 +83,26 @@
                         </a>
                         <div class="collapse" id="ui-basics">
                             <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"> <a class="nav-link">Politics</a></li>
-                            <li class="nav-item"> <a class="nav-link">Business</a></li>
-                            <li class="nav-item"> <a class="nav-link">Sports</a></li>
-                            <li class="nav-item"> <a class="nav-link">Lifestyle</a></li>
+                            <li class="nav-item"> <router-link :to="{name: 'politics'}" class="nav-link">Politics</router-link></li>
+                            <li class="nav-item"> <router-link :to="{name: 'business'}" class="nav-link">Business</router-link></li>
+                            <li class="nav-item"> <router-link :to="{name: 'sports'}" class="nav-link">Sports</router-link></li>
+                            <li class="nav-item"> <router-link :to="{name: 'lifestyle'}" class="nav-link">Lifestyle</router-link></li>
                             </ul>
                         </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <router-link :to="{name:'regions'}" class="nav-link" >
+                            <span class="menu-title">Regions</span>
+                            <i class="mdi mdi-earth menu-icon"></i>
+                        </router-link>
+                    </li>
+
+                    <li class="nav-item">
+                        <router-link :to="{name:'postNews'}" class="nav-link">
+                            <span class="menu-title">Post News</span>
+                            <i class="mdi mdi-note-plus menu-icon"></i>
+                        </router-link>
                     </li>
                     
                 </ul>
@@ -104,85 +123,91 @@
 
 <script>
 import {mapActions} from 'vuex'
+import router from '../../../router';
+import $ from "jquery"
 
 export default {
-    name:"default-layout",
-    data(){
+    name: "default-layout",
+    data() {
         return {
-            user:this.$store.state.auth.user,
-            isActive:false
-        }
+            user: this.$store.state.auth.user,
+            isActive: false
+        };
     },
-    mounted () {
+    mounted() {
         function addActiveClass(element) {
             if (current === "") {
                 //for root url
-                if (element.attr('href').indexOf("index.html") !== -1) {
-                    element.parents('.nav-item').last().addClass('active');
-                    if (element.parents('.sub-menu').length) {
-                        element.closest('.collapse').addClass('show');
-                        element.addClass('active');
+                if (element.attr("href").indexOf("index.html") !== -1) {
+                    element.parents(".nav-item").last().addClass("active");
+                    if (element.parents(".sub-menu").length) {
+                        element.closest(".collapse").addClass("show");
+                        element.addClass("active");
                     }
                 }
-            } else {
+            }
+            else {
                 //for other url
-                if (element.attr('href').indexOf(current) !== -1) {
-                    element.parents('.nav-item').last().addClass('active');
-                    if (element.parents('.sub-menu').length) {
-                        element.closest('.collapse').addClass('show');
-                        element.addClass('active');
+                if (element.attr("href").indexOf(current) !== -1) {
+                    element.parents(".nav-item").last().addClass("active");
+                    if (element.parents(".sub-menu").length) {
+                        element.closest(".collapse").addClass("show");
+                        element.addClass("active");
                     }
-                    if (element.parents('.submenu-item').length) {
-                        element.addClass('active');
+                    if (element.parents(".submenu-item").length) {
+                        element.addClass("active");
                     }
                 }
             }
         }
-        $(document).on('mouseenter mouseleave', '.sidebar .nav-item', function(ev) {
-            var body = $('body');
+        $(document).on("mouseenter mouseleave", ".sidebar .nav-item", function (ev) {
+            var body = $("body");
             var sidebarIconOnly = body.hasClass("sidebar-icon-only");
             var sidebarFixed = body.hasClass("sidebar-fixed");
-            if (!('ontouchstart' in document.documentElement)) {
+            if (!("ontouchstart" in document.documentElement)) {
                 if (sidebarIconOnly) {
                     if (sidebarFixed) {
-                        if (ev.type === 'mouseenter') {
-                            body.removeClass('sidebar-icon-only');
+                        if (ev.type === "mouseenter") {
+                            body.removeClass("sidebar-icon-only");
                         }
-                    } else {
+                    }
+                    else {
                         var $menuItem = $(this);
-                        if (ev.type === 'mouseenter') {
-                            $menuItem.addClass('hover-open')
-                        } else {
-                            $menuItem.removeClass('hover-open')
+                        if (ev.type === "mouseenter") {
+                            $menuItem.addClass("hover-open");
+                        }
+                        else {
+                            $menuItem.removeClass("hover-open");
                         }
                     }
                 }
             }
         });
-        $('.aside-toggler').click(function(){
-            $('.chat-list-wrapper').toggleClass('slide')
+        $(".aside-toggler").click(function () {
+            $(".chat-list-wrapper").toggleClass("slide");
         });
     },
-    methods:{
+    methods: {
         ...mapActions({
-            signOut:"auth/logout"
+            signOut: "auth/logout"
         }),
-        async logout(){
-            await axios.post('/logout').then(({data})=>{
-                this.signOut()
-                this.$router.push({name:"login"})
-            })
+        async logout() {
+            await axios.post("/logout").then(({ data }) => {
+                this.signOut();
+                this.$router.push({ name: "login" });
+            });
         },
         minimize() {
-            var myBody = document.getElementsByTagName('body')[0]
-            if ((myBody.classList.contains('sidebar-toggle-display') || myBody.classList.contains('sidebar-absolute'))) {
-                myBody.classList.toggle('sidebar-hidden')
+            var myBody = document.getElementsByTagName("body")[0];
+            if ((myBody.classList.contains("sidebar-toggle-display") || myBody.classList.contains("sidebar-absolute"))) {
+                myBody.classList.toggle("sidebar-hidden");
             }
             else {
-                myBody.classList.toggle('sidebar-icon-only')
+                myBody.classList.toggle("sidebar-icon-only");
             }
         },
-    }
+    },
+    components: { router }
 }
 </script>
 
